@@ -1,0 +1,19 @@
+{
+  "name": "ayudamty",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "twat": "0.8.5",
+    "express": "latest",
+    "jade": "latest",
+    "socket.io": "latest",
+    "path": "latest"
+    },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}
