@@ -1,10 +1,33 @@
-h1= title
-p Welcome to #{title}
+html
 
-script(src='/socket.io/socket.io.js').
-script.
-  var socket = io.connect('http://localhost:8080');
-  socket.on('tweet', function (data) {
-  console.log(data);
-  //socket.emit('my other event', { my: 'data' });
-  });
+	head 
+		title #{title}
+		
+
+
+	body
+
+		h1= title
+		p Welcome to #{title} 
+
+
+		#objects 
+
+
+		script(src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+		script(src='/socket.io/socket.io.js')
+		script.
+
+			window.tweets = JSON.parse('!{tweets}');
+
+			$.each(window.tweets, function( index, value ) {
+				$('#objects').prepend( $('<p />').html( JSON.stringify(value) ) );
+			});
+
+			var socket = io.connect(window.location.hostname);
+				socket.on('tweet', function (data) {
+				$('#objects').prepend( $('<p />').html( data ) );
+				console.log(data);
+				//socket.emit('my other event', { my: 'data' });
+			});
+

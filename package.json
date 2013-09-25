@@ -1,5 +1,5 @@
 {
-  "name": "ayudamty",
+  "name": "dandolata",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,7 +10,8 @@
     "express": "latest",
     "jade": "latest",
     "socket.io": "latest",
-    "path": "latest"
+    "path": "latest",
+    "mongoose": "latest"
     },
   "devDependencies": {},
   "engines": {
