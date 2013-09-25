@@ -4,6 +4,7 @@ var app = express();
 var socket = require('socket.io');
 var path = require('path');
 var mongoose = require('mongoose');
+var stylus = require('stylus')
 
 var twit = new Twat({
   consumer_key: '',
@@ -29,6 +30,7 @@ app.configure(function(){
 
     app.set('views', __dirname + '/views');
     app.set('view engine', 'jade');
+    app.use(require('stylus').middleware(__dirname + '/public'));
     app.use(express.favicon());
     app.use(express.bodyParser());
     app.use(app.router);
